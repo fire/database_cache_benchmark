@@ -5,6 +5,19 @@
 # is restricted to this project.
 use Mix.Config
 
+config :hello, Hello.LocalCache,
+  n_shards: 2,
+  gc_interval: 3600
+
+config :hello, Hello.DistCache,
+  adapter: Nebulex.Adapters.Dist,
+  local: Hello.LocalCache,
+  node_picker: Nebulex.Adapters.Dist
+
+config :hello, Hello.CacheableRepo,
+  cache: Hello.DistCache,
+  repo: Hello.Repo
+
 # Configures the endpoint
 config :hello, Hello.Endpoint,
   url: [host: "localhost"],

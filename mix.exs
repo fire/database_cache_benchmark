@@ -28,6 +28,8 @@ defmodule Hello.Mixfile do
   defp deps do
     [{:phoenix, "~> 1.3"},
      {:phoenix_ecto, "~> 3.0"},
+     {:nebulex, "~> 1.0.0-rc.1"},
+     {:nebulex_ecto, github: "cabol/nebulex_ecto"},
      {:crdbex, git: "https://github.com/fire/crdbex.git", app: false},
      {:benchfella, "~> 0.3.0"},
 #     {:eflame, ~r/.*/, git: "https://github.com/slfritchie/eflame.git", compile: "rebar compile"},

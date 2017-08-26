@@ -6,6 +6,15 @@ config :hello, Hello.Endpoint,
   cache_static_lookup: false,
   server: true
 
+config :hello, Hello.LocalCache,
+  n_shards: 2,
+  gc_interval: 3600
+
+config :hello, Hello.DistCache,
+  adapter: Nebulex.Adapters.Dist,
+  local: Hello.LocalCache,
+  node_picker: Nebulex.Adapters.Dist
+
 config :hello, Hello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "root",
@@ -14,6 +23,10 @@ config :hello, Hello.Repo,
   hostname: "127.0.0.1",
   pool_size: 36,
   port: 26257
+
+config :hello, Hello.CacheableRepo,
+  cache: Hello.DistCache,
+  repo: Hello.Repo
 
 # ## SSL Support
 #

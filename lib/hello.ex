@@ -10,8 +10,10 @@ defmodule Hello do
       # Start the endpoint when the application starts
       supervisor(Hello.Endpoint, []),
       # Here you could define other workers and supervisors as children
-      # Start the Ecto repository
-      worker(Hello.Repo, [])
+      # Start the Ecto repository,
+      worker(Hello.Repo, []),
+      supervisor(Hello.LocalCache, []),
+      supervisor(Hello.DistCache, []),
       # worker(Hello.Worker, [arg1, arg2, arg3]),
     ]
 

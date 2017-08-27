@@ -19,7 +19,7 @@ defmodule Hello.PageController do
     id = :rand.uniform(10000)
     randomnumber = Repo.get(World, id)
     conn
-    |> json(%{id: id, randomNumber: randomnumber})
+    |> json(%{id: id, random_number: randomnumber})
   end
 
   def queries(conn, params) do
@@ -36,7 +36,7 @@ defmodule Hello.PageController do
     queries = Enum.map(1..q, fn _ ->
       id = :rand.uniform(10000)
       randomnumber = Repo.get(World, id)
-      %{id: id, randomNumber: randomnumber}
+      %{id: id, random_number: randomnumber}
     end)
 
     conn
@@ -68,15 +68,15 @@ defmodule Hello.PageController do
 
     query =
       from(World)
-      |> select([w], {w.randomnumber})
+      |> select([w], {w.random_number})
 
     conn
     |> json(Enum.map(1..q, fn _ ->
       id = :rand.uniform(10000)
       num = :rand.uniform(10000)
       w = Repo.get(query, id)
-      {:ok, update} = Repo.update(Ecto.Changeset.change(%World{id: id, randomnumber: elem(w, 0)}))
-      %{id: update.id, randomnumber: update.randomnumber}
+      {:ok, update} = Repo.update(Ecto.Changeset.change(%World{id: id, random_number: elem(w, 0)}))
+      %{id: update.id, random_number: update.randomnumber}
     end))
   end
 

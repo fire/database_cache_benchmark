@@ -1,22 +1,27 @@
 defmodule BasicBench do
   use Benchfella
 
-  @id :rand.uniform(10000)
-  @random_number :rand.uniform(10000)
+  @id Ecto.UUID.generate()
+
+   setup_all do
+    Hello.World.changeset(%Hello.World{}, %{id: @id, random_number: :rand.uniform(10000)})
+    |> Hello.CacheableRepo.insert_or_update
+    {:ok, nil}
+  end
 
   bench "cached select" do
-    Hello.CacheableRepo.get!(Hello.World, @id)
+    Hello.CacheableRepo.get(Hello.World, @id)
+    :ok
   end
 
-  bench "cached update" do
-    Hello.CacheableRepo.insert(%Hello.World{id: @id, randomnumber: @random_number})
+  bench "select all" do
+    Hello.Repo.all(Hello.World)
+    :ok
   end
 
-  bench "select" do
-    Hello.Repo.query("select * from world where id = " <> to_string(@id))
-  end
-
-  bench "update" do
-    Hello.Repo.query("INSERT INTO world (id, randomnumber) VALUES (" <> to_string(@id) <> ", " <> to_string(@random_number) <> ")")
+  bench "insert" do
+     Hello.World.changeset(%Hello.World{}, %{id: Ecto.UUID.generate(), random_number: :rand.uniform(10000)})
+     |>  Hello.Repo.insert
+     :ok
   end
 end

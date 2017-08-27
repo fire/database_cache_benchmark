@@ -6,8 +6,8 @@
 use Mix.Config
 
 config :hello, Hello.LocalCache,
-#  read_concurrency: false,
-#  write_concurrency: false,
+  read_concurrency: false,
+  write_concurrency: false,
   gc_interval: 3600
 
 config :hello, Hello.DistCache,

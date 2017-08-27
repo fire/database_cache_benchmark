@@ -15,12 +15,14 @@ config :hello, Hello.DistCache,
   local: Hello.LocalCache,
   node_picker: Nebulex.Adapters.Dist
 
+config :hello, ecto_repos: [Hello.Repo]
+
 config :hello, Hello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "root",
   password: "",
   database: "bench",
-  hostname: "127.0.0.1",
+  hostname: "192.168.0.107",
   pool_size: 36,
   port: 26257
 

@@ -21,7 +21,7 @@ defmodule BasicBench do
 
   bench "insert" do
      Hello.World.changeset(%Hello.World{}, %{id: Ecto.UUID.generate(), random_number: :rand.uniform(10000)})
-     |>  Hello.Repo.insert
+     |>  Hello.CacheableRepo.insert
      :ok
   end
 end

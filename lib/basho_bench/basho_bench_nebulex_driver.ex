@@ -5,7 +5,7 @@ defmodule BashoBench.Nebulex.Driver do
 
   def run(:put, key_gen, value_gen, state) do
     {ok, _schema} = Hello.World.changeset(%Hello.World{}, %{id: key_gen.(), random_number: value_gen.()})
-    |>  Hello.Repo.insert
+    |>  Hello.CacheableRepo.insert
     {ok, state}
   end
 

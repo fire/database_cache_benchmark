@@ -4,13 +4,13 @@ defmodule BashoBench.Nebulex.Driver do
   end
 
   def run(:put, key_gen, value_gen, state) do
-    Hello.World.changeset(%Hello.World{}, %{id: Ecto.UUID.generate(), random_number: Ecto.UUID.generate()})
+    {ok, _schema} = Hello.World.changeset(%Hello.World{}, %{id: key_gen.(), random_number: value_gen.()})
     |>  Hello.Repo.insert
-    {:ok, state}
+    {ok, state}
   end
 
   def run(:get, key_gen, value_gen, state) do
-    Hello.CacheableRepo.get(Hello.World, Ecto.UUID.generate())
-    {:ok, state}
+    {ok, _schema} = Hello.CacheableRepo.get(Hello.World, key_gen.())
+    {ok, state}
   end
 end

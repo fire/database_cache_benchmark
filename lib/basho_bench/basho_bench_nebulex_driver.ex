@@ -25,6 +25,14 @@ defmodule BashoBench.Nebulex.Driver do
     end
   end
 
+  def run(:put_raw, key_gen, value_gen, state) do
+    result = Ecto.Adapters.SQL.query(Hello.Repo, "PUT INTO world (id, random_number) VALUES(?, ?)", [key_gen.(), value_gen.()])
+    case result do
+      {:ok, _schema} -> {:ok, state}
+      {:error, reason} -> {:error, reason, state}
+    end
+  end
+
   def run(:get, key_gen, value_gen, state) do
    _ = Hello.CacheableRepo.get(Hello.World, key_gen.())
     {:ok, state}

@@ -22,7 +22,7 @@ config :hello, Hello.Repo,
   username: "root",
   password: "",
   database: "bench",
-  hostname: "192.168.0.107",
+  hostname: "127.0.0.1",
   pool_size: 36,
   port: 26257
 

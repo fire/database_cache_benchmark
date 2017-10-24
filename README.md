@@ -12,7 +12,7 @@ Now you can visit `localhost:8080` from your browser.
 ```bash
 mix ecto.create -r Hello.Repo
 mix ecto.migrate -r Hello.Repo
-iex -S mix
+MIX_ENV=prod iex -S mix
 ```
 
 ```elixir

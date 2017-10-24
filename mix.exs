@@ -32,7 +32,6 @@ defmodule Hello.Mixfile do
      {:nebulex_ecto, github: "cabol/nebulex_ecto"},
      {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
      {:postgrex, "~> 0.13.3", hex: :postgrex_cdb, override: true},
-     {:benchfella, "~> 0.3.0"},
 #     {:eflame, ~r/.*/, git: "https://github.com/slfritchie/eflame.git", compile: "rebar compile"},
      {:cowboy, "~> 1.0.0"},
      {:phoenix_html, "~> 2.6"},

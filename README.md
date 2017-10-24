@@ -19,7 +19,7 @@ iex -S mix
 ```elixir
 :basho_bench.start()
 :basho_bench.setup_benchmark([])
-:basho_bench.run_benchmark(['./src/basho_bench_nebulex.config'])
+:basho_bench.run_benchmark(['./bench/basho_bench_nebulex.config'])
 ```
 
 ```bat

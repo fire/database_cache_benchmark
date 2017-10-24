@@ -2,8 +2,7 @@ defmodule Hello.Repo.Migrations.AddWorldTable do
   use Ecto.Migration
 
   def up do
-    create table(:world, primary_key: false) do
-          add :id, :uuid, primary_key: true
+    create table(:world) do
           add :random_number, :integer, [null: false]
 
           timestamps()

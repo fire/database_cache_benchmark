@@ -9,9 +9,14 @@ Now you can visit `localhost:8080` from your browser.
 
 ## Benchmarking
 
+```bash
 mix ecto.create -r Hello.Repo
 mix ecto.migrate -r Hello.Repo
-export MIX_ENV=prod 
-mix do app.start, bench -d 10
+iex -S mix
+```
 
-Note that benchfella is only able to generate load on 1 core.
+```elixir
+:basho_bench.start()
+:basho_bench.setup_benchmark([])
+:basho_bench.run_benchmark(['./src/basho_bench_nebulex.config'])
+```

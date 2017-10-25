@@ -2,6 +2,7 @@ defmodule Hello.World do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @schema_prefix "bench"
   @derive {Phoenix.Param, key: :id}
   schema "world" do
     field :random_number, :integer

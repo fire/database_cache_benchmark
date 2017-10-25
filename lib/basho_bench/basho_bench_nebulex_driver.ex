@@ -5,7 +5,7 @@ defmodule BashoBench.Nebulex.Driver do
 
   def run(:put_on_conflict, key_gen, value_gen, state) do
     changeset = Hello.World.changeset(%Hello.World{}, %{id: key_gen.(), random_number: value_gen.()})
-    case Hello.CacheableRepo.insert(changeset, returning: true, on_conflict: [set: [random_number: value_gen.()]], conflict_target: :id) do
+    case Hello.CacheableRepo.insert(changeset, returning: true, on_conflict: :replace_all, conflict_target: :id) do
       {:ok, _schema} -> {:ok, state}
       {:error, reason} -> {:error, reason, state}
     end
@@ -26,7 +26,7 @@ defmodule BashoBench.Nebulex.Driver do
   end
 
   def run(:put_raw, key_gen, value_gen, state) do
-    result = Ecto.Adapters.SQL.query(Hello.Repo, "PUT INTO world (id, random_number) VALUES(?, ?)", [key_gen.(), value_gen.()])
+    result = Ecto.Adapters.SQL.query(Hello.Repo, "PUT INTO bench.world (id, random_number, inserted_at, updated_at) VALUES(?, ?, ?, ?)", [key_gen.(), value_gen.(), DateTime.utc_now(), DateTime.utc_now()])
     case result do
       {:ok, _schema} -> {:ok, state}
       {:error, reason} -> {:error, reason, state}

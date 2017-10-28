@@ -23,7 +23,7 @@ config :hello, Hello.Repo,
   password: "",
   database: "bench",
   hostname: "127.0.0.1",
-  pool_size: 36,
+  pool_size: 20,
   port: 26257
 
 config :hello, Hello.CacheableRepo,

@@ -22,14 +22,14 @@ config :hello, Hello.Endpoint,
     ]
   ]
 
-config :hello, Hello.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "root",
+  config :hello, Hello.Repo,
+  adapter: Ecto.Adapters.SnappyData,
+  username: "app",
   password: "",
-  database: "bench",
-  hostname: "127.0.0.1",
+  hostname: "192.168.0.32",
   pool_size: 20,
-  port: 26257
+  schema: "app",
+  port: 30149
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

@@ -22,14 +22,15 @@ config :hello, Hello.Endpoint,
     ]
   ]
 
-  config :hello, Hello.Repo,
+config :hello, Hello.Repo,
   adapter: Ecto.Adapters.SnappyData,
   username: "app",
   password: "",
-  hostname: "192.168.0.32",
+  hostname: "192.168.0.26",
+  pool: DBConnection.Poolboy,
   pool_size: 20,
-  schema: "app",
-  port: 30149
+  schema: "bench",
+  port: 31019
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

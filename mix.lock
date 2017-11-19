@@ -36,7 +36,7 @@
   "postgrex": {:hex, :postgrex_cdb, "0.13.3", "06b13cc193701ab43f8cb141fcc3a5a56fc21de5386abc77eb9006851c21181c", [], [{:connection, "~> 1.0", [hex: :connection, repo: "hexpm", optional: false]}, {:db_connection, "~> 1.1", [hex: :db_connection, repo: "hexpm", optional: false]}, {:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: false]}], "hexpm"},
   "ranch": {:hex, :ranch, "1.4.0", "10272f95da79340fa7e8774ba7930b901713d272905d0012b06ca6d994f8826b", [], [], "hexpm"},
   "shards": {:hex, :shards, "0.5.0", "2780002307ccf250368a067d59b364e7cf1af1c788a9f60b490d199a6028b6de", [], [], "hexpm"},
-  "snappydata_ecto": {:git, "https://github.com/fire/snappydata_ecto.git", "6f4dda411c79f6326191a5c97eac056d1ba2e432", []},
+  "snappydata_ecto": {:git, "https://github.com/fire/snappydata_ecto.git", "b565a063e0ea4b3ad4679d19eb7a06976163f97a", []},
   "snappyex": {:git, "https://github.com/fire/snappyex.git", "3fbdc0f89afbea8eb7f030e1811ec539af6905ce", [tag: "master"]},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.1", "28a4d65b7f59893bc2c7de786dec1e1555bd742d336043fe644ae956c3497fbe", [], [], "hexpm"},
   "thrift": {:git, "https://github.com/pinterest/elixir-thrift.git", "9dd4f0b4a1d7f4a8e6daa58fa1f94940867d653d", [ref: "thrift_tng"]},

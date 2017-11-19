@@ -24,7 +24,7 @@ defmodule BashoBench.SnappyData do
   end
 
   def run(:put_raw, key_gen, value_gen, state) do
-    result = Ecto.Adapters.SQL.query(Hello.Repo, "PUT INTO bench.world (id, random_number, inserted_at, updated_at) VALUES(?, ?, ?, ?)", [key_gen.(), value_gen.(), DateTime.utc_now(), DateTime.utc_now()])
+    result = Ecto.Adapters.SQL.query(Hello.Repo, ~s(PUT INTO bench.world \("id", "random_number", "inserted_at", "updated_at"\) VALUES\(?, ?, ?, ?\)), [key_gen.(), value_gen.(), DateTime.utc_now(), DateTime.utc_now()])
     case result do
       {:ok, _schema} -> {:ok, state}
       {:error, reason} -> {:error, reason, state}

@@ -17,7 +17,7 @@ defmodule Hello.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Hello, []},
-     applications: [:phoenix, :phoenix_ecto, :postgrex, :cowboy, :logger, :phoenix_html, :basho_bench]]
+     applications: [:phoenix, :phoenix_ecto, :snappyex, :cowboy, :logger, :phoenix_html, :basho_bench]]
   end
 
   defp elixirc_paths(_), do: ["lib", "web"]
@@ -33,7 +33,6 @@ defmodule Hello.Mixfile do
      {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
      {:snappydata_ecto, github: "fire/snappydata_ecto"},
      {:cowboy, "~> 1.0.0"},
-     {:postgrex, "~> 0.13.3", hex: :postgrex_cdb, override: true},
 #     {:eflame, ~r/.*/, git: "https://github.com/slfritchie/eflame.git", compile: "rebar compile"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev}]

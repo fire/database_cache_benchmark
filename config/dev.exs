@@ -29,8 +29,9 @@ config :hello, Hello.Repo,
   hostname: "192.168.0.26",
   pool: DBConnection.Poolboy,
   pool_size: 20,
-  schema: "bench",
-  port: 31019
+  schema: "app",
+# loggers: [{IO, :inspect, []}],
+  port: 30771
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

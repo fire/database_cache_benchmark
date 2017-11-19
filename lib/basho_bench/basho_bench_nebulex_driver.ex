@@ -20,7 +20,7 @@ defmodule BashoBench.Nebulex.Driver do
       |> Hello.World.changeset(%{random_number: value_gen.()})
       |> Hello.CacheableRepo.insert_or_update
     case result do
-      {:ok, _schema} -> {:ok, state}
+      {:ok, _result} -> {:ok, state}
       {:error, reason} -> {:error, reason, state}
     end
   end

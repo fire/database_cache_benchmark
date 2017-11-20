@@ -37,7 +37,7 @@
   "ranch": {:hex, :ranch, "1.4.0", "10272f95da79340fa7e8774ba7930b901713d272905d0012b06ca6d994f8826b", [], [], "hexpm"},
   "shards": {:hex, :shards, "0.5.0", "2780002307ccf250368a067d59b364e7cf1af1c788a9f60b490d199a6028b6de", [], [], "hexpm"},
   "snappydata_ecto": {:git, "https://github.com/fire/snappydata_ecto.git", "b565a063e0ea4b3ad4679d19eb7a06976163f97a", []},
-  "snappyex": {:git, "https://github.com/fire/snappyex.git", "3fbdc0f89afbea8eb7f030e1811ec539af6905ce", [tag: "master"]},
+  "snappyex": {:git, "https://github.com/fire/snappyex.git", "97428a923257f83abf814cffe57df7759a99ab2e", [tag: "master"]},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.1", "28a4d65b7f59893bc2c7de786dec1e1555bd742d336043fe644ae956c3497fbe", [], [], "hexpm"},
   "thrift": {:git, "https://github.com/pinterest/elixir-thrift.git", "9dd4f0b4a1d7f4a8e6daa58fa1f94940867d653d", [ref: "thrift_tng"]},
   "timex": {:hex, :timex, "3.0.8", "71d5ebafcdc557c6c866cdc196c5054f587e7cd1118ad8937e2293d51fc85608", [], [{:combine, "~> 0.7", [hex: :combine, repo: "hexpm", optional: false]}, {:gettext, "~> 0.10", [hex: :gettext, repo: "hexpm", optional: false]}, {:tzdata, "~> 0.1.8 or ~> 0.5", [hex: :tzdata, repo: "hexpm", optional: false]}], "hexpm"},

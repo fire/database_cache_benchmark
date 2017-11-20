@@ -54,7 +54,6 @@ query = from p in Hello.World,
 Hello.Repo.all(query)
 Hello.Repo.query(~s(SELECT w0."id", w0."random_number", w0."inserted_at", w0."updated_at" FROM BENCH.WORLD AS w0 WHERE \(w0."id" = 1\)), [])
 
-
 world = Hello.CacheableRepo.get(Hello.World, 1)
 set =  Hello.World.changeset(world, %{random_number: 6})
 Hello.CacheableRepo.insert_or_update(set)
@@ -64,7 +63,12 @@ Hello.Repo.query(~s(UPDATE BENCH.WORLD SET \"random_number\"=?, \"updated_at\"=?
 Hello.Repo.query(~s(UPDATE BENCH.WORLD SET \"random_number\" = ?, \"updated_at\" = ? WHERE \"id\" = ?), [9425, {{2017, 11, 19}, {19, 48, 11, 490219}}, 10])
 
 world = Hello.Repo.get(Hello.World, 1)
-set =  Hello.World.changeset(world, %{random_number: 3})
+set =  Hello.World.changeset(world, %{random_number: 4})
 Hello.Repo.insert_or_update(set)
 
+Hello.Repo.query("CREATE TABLE SNAPPYEX_TEST.TEST_ENCODE (id int primary key, title varchar(20), body string, f float, d double, b bigint, curr timestamp)", [])
+{:ok, result} = Hello.Repo.query("DROP TABLE IF EXISTS SNAPPYEX_TEST.TEST_ENCODE", [])
+rows = result.rows
+
+BashoBench.SnappyData.begin
 ```

@@ -3,12 +3,6 @@ defmodule BashoBench.SnappyData do
     {:ok, {}}
   end
 
-  def begin() do
-    :basho_bench.start()
-    :basho_bench.setup_benchmark([])
-    :basho_bench.run_benchmark(['./bench/snappydata.config'])
-  end
-
   def run(:put, key_gen, value_gen, state) do
     id = key_gen.()
     value = value_gen.()

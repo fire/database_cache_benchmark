@@ -8,7 +8,6 @@ defmodule Hello do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(Hello.Endpoint, []),
       # Here you could define other workers and supervisors as children
       # Start the Ecto repository,
       worker(Hello.Repo, []),
@@ -28,5 +27,11 @@ defmodule Hello do
   def config_change(changed, _new, removed) do
     Hello.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  def bench() do
+    :basho_bench.start()
+    :basho_bench.setup_benchmark([])
+    :basho_bench.run_benchmark(['./bench/snappydata.config'])
   end
 end

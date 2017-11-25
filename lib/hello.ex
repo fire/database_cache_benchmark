@@ -32,6 +32,6 @@ defmodule Hello do
   def bench() do
     :basho_bench.start()
     :basho_bench.setup_benchmark([])
-    :basho_bench.run_benchmark(['./bench/snappydata.config'])
+    :basho_bench.run_benchmark(['./config/bench/snappydata.config'])
   end
 end

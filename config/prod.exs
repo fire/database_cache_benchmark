@@ -21,12 +21,12 @@ config :hello, Hello.Repo,
   adapter: Ecto.Adapters.SnappyData,
   username: "app",
   password: "",
-  hostname: "192.168.0.26",
+  hostname: "192.168.0.17",
   pool: DBConnection.Poolboy,
   pool_size: 20,
   schema: "app",
 # loggers: [{IO, :inspect, []}],
-  port: 30771
+  port: 1528
 
 config :hello, Hello.CacheableRepo,
   cache: Hello.DistCache,

@@ -1,4 +1,4 @@
-defmodule BashoBench.SnappyData do
+defmodule Hello.BashoBench.SnappyData do
   def new(_state) do
     {:ok, {}}
   end

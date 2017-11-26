@@ -1,7 +1,5 @@
 use Mix.Config
 
-config :hello, ecto_repos: [Hello.Repo]
-
 config :hello, Hello.Repo,
   adapter: Ecto.Adapters.SnappyData,
   username: "app",

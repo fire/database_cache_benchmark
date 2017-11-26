@@ -9,7 +9,7 @@ config :hello, Hello.Repo,
   pool_size: 20,
   schema: "app",
 # loggers: [{IO, :inspect, []}],
-  port: 1528
+  port: 1527
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

@@ -2,7 +2,7 @@ defmodule Hello.Repo.Migrations.AddWorldTable do
   use Ecto.Migration
 
   def up do
-    create table(:world) do
+    create table(:world, options: "USING ROW OPTIONS (PERSISTENCE 'ASYNC')") do
           add :random_number, :integer, [null: false]
 
           timestamps()

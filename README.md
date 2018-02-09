@@ -17,7 +17,7 @@ iex -S mix
 ```
 
 ```elixir
-BashoBench.SnappyData.begin
+Hello.bench
 ```
 
 ```bat

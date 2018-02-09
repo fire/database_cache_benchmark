@@ -6,13 +6,14 @@ defmodule Hello.BashoBench.SnappyData do
   def run(:put, key_gen, value_gen, state) do
     id = key_gen.()
     value = value_gen.()
-    result = 
-    case Hello.CacheableRepo.get(Hello.World, id) do
-      nil  -> %Hello.World{id: id}
-      world -> world
-    end
-    |> Hello.World.changeset(%{random_number: value})
-    |> Hello.CacheableRepo.insert_or_update
+
+    result =
+      case Hello.CacheableRepo.get(Hello.World, id) do
+        nil -> %Hello.World{id: id}
+        world -> world
+      end
+      |> Hello.World.changeset(%{random_number: value})
+      |> Hello.CacheableRepo.insert_or_update()
 
     case result do
       {:ok, _schema} -> {:ok, state}

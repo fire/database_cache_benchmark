@@ -3,7 +3,7 @@ defmodule Hello.World do
   import Ecto.Changeset
 
   schema "world" do
-    field :random_number, :integer
+    field(:random_number, :integer)
     timestamps()
   end
 

@@ -8,7 +8,7 @@ config :hello, Hello.Repo,
   pool: DBConnection.Poolboy,
   pool_size: 20,
   schema: "app",
-# loggers: [{IO, :inspect, []}],
+  # loggers: [{IO, :inspect, []}],
   port: 31320
 
 # ## SSL Support

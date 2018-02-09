@@ -12,7 +12,7 @@ defmodule Hello do
       # Start the Ecto repository,
       worker(Hello.Repo, []),
       supervisor(Hello.LocalCache, []),
-      supervisor(Hello.DistCache, []),
+      supervisor(Hello.DistCache, [])
       # worker(Hello.Worker, [arg1, arg2, arg3]),
     ]
 

@@ -34,7 +34,6 @@ defmodule Hello.Mixfile do
       {:nebulex_ecto, github: "cabol/nebulex_ecto"},
       {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
       {:snappydata_ecto, github: "fire/snappydata_ecto"},
-      {:thrift, github: "pinterest/elixir-thrift", override: true},
       {:cowboy, "~> 1.0.0"}
     ]
   end

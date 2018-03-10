@@ -30,7 +30,7 @@ defmodule Hello.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [
-      {:nebulex, "~> 1.0.0-rc.1"},
+      {:nebulex, "~> 1.0.0-rc.3"},
       {:nebulex_ecto, github: "cabol/nebulex_ecto"},
       {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
       {:snappydata_ecto, github: "fire/snappydata_ecto"},

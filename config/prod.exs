@@ -9,7 +9,7 @@ config :hello, Hello.Repo,
   pool_size: 20,
   schema: "app",
   # loggers: [{IO, :inspect, []}],
-  port: 31320
+  port: 32254
 
 # ## SSL Support
 #

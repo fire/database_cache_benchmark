@@ -22,9 +22,16 @@ defmodule Hello do
     Supervisor.start_link(children, opts)
   end
 
-  def bench() do
+  def bench(type \\ :read_write) do
     :basho_bench.start()
     :basho_bench.setup_benchmark([])
-    :basho_bench.run_benchmark(['./config/bench/snappydata.config'])
+
+    case type do
+      :read -> :basho_bench.run_benchmark(['./config/bench/snappydata_read.config'])
+      :read_cache -> :basho_bench.run_benchmark(['./config/bench/snappydata_read_cache.config'])
+      :read_write -> :basho_bench.run_benchmark(['./config/bench/snappydata.config'])
+      :read_write_cache -> :basho_bench.run_benchmark(['./config/bench/snappydata_cache.config'])
+    end
   end
+
 end

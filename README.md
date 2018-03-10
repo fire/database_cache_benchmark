@@ -22,5 +22,7 @@ Hello.bench
 
 ```bat
 choco install microsoft-r-open
-"C:\Program Files\Microsoft\R Open\R-3.4.2\bin\x64\Rscript.exe" G:\Ernest\database_cache_benchmark\deps\basho_bench\priv\summary.r -i G:\Ernest\database_cache_benchmark\tests\20171128_123841\
+"C:\Program Files\Microsoft\R Open\R-3.4.2\bin\x64\Rscript.exe" d:\Projects\databas
+e_cache_benchmark\deps\basho_bench\priv\summary.r -i d:\Projects\databas
+e_cache_benchmark\tests\20180310_054918\
 ```

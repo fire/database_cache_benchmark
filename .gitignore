@@ -6,3 +6,6 @@ erl_crash.dump
 bench/snapshots/
 /tests/
 /log/
+/config/cacert.pem
+/config/cert.pem
+/config/key.pem

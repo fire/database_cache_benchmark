@@ -17,11 +17,12 @@ iex -S mix
 ```
 
 ```elixir
-:basho_bench.start()
-:basho_bench.setup_benchmark([])
-:basho_bench.run_benchmark(['./bench/basho_bench_nebulex.config'])
+Hello.bench
 ```
 
 ```bat
-"C:\Program Files\Microsoft\R Open\R-3.4.1\bin\x64\Rscript.exe" G:\database_cache_benchmark\deps\basho_bench\priv\summary.r -i G:\database_cache_benchmark\tests\20171024_075858
+choco install microsoft-r-open
+"C:\Program Files\Microsoft\R Open\R-3.4.2\bin\x64\Rscript.exe" d:\Projects\databas
+e_cache_benchmark\deps\basho_bench\priv\summary.r -i d:\Projects\databas
+e_cache_benchmark\tests\20180310_054918\
 ```

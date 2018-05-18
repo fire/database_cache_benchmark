@@ -1,35 +1,16 @@
 use Mix.Config
 
-# For development, we disable any cache and enable
-# debugging and code reloading.
-#
-# The watchers configuration can be used to run external
-# watchers to your application. For example, we use it
-# with brunch.io to recompile .js and .css sources.
-config :hello, Hello.Endpoint,
-  http: [port: 8081],
-  debug_errors: true,
-  code_reloader: true,
-  cache_static_lookup: false
-
-# Watch static and templates for browser reloading.
-config :hello, Hello.Endpoint,
-  live_reload: [
-    patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif)$},
-      ~r{web/views/.*(ex)$},
-      ~r{web/templates/.*(eex)$}
-    ]
-  ]
-
 config :hello, Hello.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "root",
+  adapter: Ecto.Adapters.SnappyData,
+  username: "app",
   password: "",
-  database: "bench",
-  hostname: "127.0.0.1",
+  hostname: "192.168.0.10",
+  pool: DBConnection.Poolboy,
   pool_size: 20,
-  port: 26257
+  schema: "app",
+  opts: [ssl_opts: [enabled: true, cacertfile: "config/cacerts.pem", certfile: "config/cert.pem", keyfile: "config/key.pem"]],
+  # loggers: [{IO, :inspect, []}],
+  port: 31002
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"

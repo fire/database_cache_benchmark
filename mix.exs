@@ -2,22 +2,25 @@ defmodule Hello.Mixfile do
   use Mix.Project
 
   def project do
-   [app: :hello,
-    version: "0.1.0",
-    elixir: "~> 1.3",
-    elixirc_paths: elixirc_paths(Mix.env),
-    compilers: [:phoenix] ++ Mix.compilers,
-    build_embedded: Mix.env == :prod,
-    start_permanent: Mix.env == :prod,
-    deps: deps()]
+    [
+      app: :hello,
+      version: "0.1.0",
+      elixir: "~> 1.6",
+      elixirc_paths: elixirc_paths(Mix.env()),
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
   #
   # Type `mix help compile.app` for more information
   def application do
-    [mod: {Hello, []},
-     applications: [:phoenix, :phoenix_ecto, :postgrex, :cowboy, :logger, :phoenix_html, :basho_bench]]
+    [
+      mod: {Hello, []},
+      applications: [:snappyex, :snappydata_ecto, :cowboy, :logger, :basho_bench]
+    ]
   end
 
   defp elixirc_paths(_), do: ["lib", "web"]
@@ -26,16 +29,12 @@ defmodule Hello.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~> 1.3"},
-     {:phoenix_ecto, "~> 3.0"},
-     {:nebulex, "~> 1.0.0-rc.1"},
-     {:nebulex_ecto, github: "cabol/nebulex_ecto"},
-     {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
-     {:postgrex, "~> 0.13.3", hex: :postgrex_cdb, override: true},
-     {:snappydata_ecto, github: "fire/snappydata_ecto"},
-#     {:eflame, ~r/.*/, git: "https://github.com/slfritchie/eflame.git", compile: "rebar compile"},
-     {:cowboy, "~> 1.0.0"},
-     {:phoenix_html, "~> 2.6"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev}]
+    [
+      {:nebulex, "~> 1.0.0-rc.3"},
+      {:nebulex_ecto, github: "cabol/nebulex_ecto"},
+      {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
+      {:snappydata_ecto, github: "fire/snappydata_ecto"},
+      {:cowboy, "~> 1.0.0"}
+    ]
   end
 end

@@ -1,34 +1,16 @@
 use Mix.Config
 
-config :hello, Hello.Endpoint,
-  url: [host: "0.0.0.0"],
-  http: [port: 8081, protocol_options: [max_keepalive: 5_000_000]],
-  cache_static_lookup: false,
-  server: true
-
-config :hello, Hello.LocalCache,
-  n_shards: 2,
-  gc_interval: 3600
-
-config :hello, Hello.DistCache,
-  adapter: Nebulex.Adapters.Dist,
-  local: Hello.LocalCache,
-  node_picker: Nebulex.Adapters.Dist
-
-config :hello, ecto_repos: [Hello.Repo]
-
 config :hello, Hello.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "root",
+  adapter: Ecto.Adapters.SnappyData,
+  username: "app",
   password: "",
-  database: "bench",
-  hostname: "127.0.0.1",
-  pool_size: 36,
-  port: 26257
-
-config :hello, Hello.CacheableRepo,
-  cache: Hello.DistCache,
-  repo: Hello.Repo
+  hostname: "192.168.0.10",
+  pool: DBConnection.Poolboy,
+  pool_size: 20,
+  schema: "app",
+  opts: [ssl_opts: [enabled: true, cacertfile: "config/cacerts.pem", certfile: "config/cert.pem", keyfile: "config/key.pem"]],
+  # loggers: [{IO, :inspect, []}],
+  port: 30067
 
 # ## SSL Support
 #

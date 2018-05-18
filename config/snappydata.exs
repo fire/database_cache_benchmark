@@ -18,13 +18,13 @@ config :hello, Hello.DistCache,
 config :hello, ecto_repos: [Hello.Repo]
 
 config :hello, Hello.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "root",
+  adapter: Ecto.Adapters.SnappyData,
+  username: "app",
   password: "",
-  database: "bench",
-  hostname: "127.0.0.1",
-  pool_size: 36,
-  port: 26257
+  hostname: "192.168.0.17",
+  schema: "bench",
+  pool_size: 20,
+  port: 1528
 
 config :hello, Hello.CacheableRepo,
   cache: Hello.DistCache,

@@ -26,3 +26,7 @@ choco install microsoft-r-open
 e_cache_benchmark\deps\basho_bench\priv\summary.r -i d:\Projects\databas
 e_cache_benchmark\tests\20180310_054918\
 ```
+
+```sh
+Rscript deps/basho_bench/priv/summary.r -i tests/current/
+```

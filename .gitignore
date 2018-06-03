@@ -9,3 +9,4 @@ bench/snapshots/
 /config/cacert.pem
 /config/cert.pem
 /config/key.pem
+/config/cacerts.pem

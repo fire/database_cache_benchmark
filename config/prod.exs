@@ -10,7 +10,7 @@ config :hello, Hello.Repo,
   schema: "app",
   opts: [ssl_opts: [enabled: true, cacertfile: "config/cacerts.pem", certfile: "config/cert.pem", keyfile: "config/key.pem"]],
   # loggers: [{IO, :inspect, []}],
-  port: 30067
+  port: 1528
 
 # ## SSL Support
 #

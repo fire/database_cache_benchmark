@@ -32,7 +32,7 @@ defmodule Hello.Mixfile do
     [
       {:nebulex, "~> 1.0.0-rc.3"},
       {:nebulex_ecto, github: "cabol/nebulex_ecto"},
-      {:basho_bench, github: "mrallen1/basho_bench", ref: "mra-rebar3"},
+      {:basho_bench, github: "fire/basho_bench", ref: "mra-rebar3"},
       {:snappydata_ecto, github: "fire/snappydata_ecto"},
       {:cowboy, "~> 1.0.0"}
     ]

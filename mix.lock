@@ -1,5 +1,5 @@
 %{
-  "basho_bench": {:git, "https://github.com/mrallen1/basho_bench.git", "c92c71c09b17f5f2c983a31d2a6ec2db40de9bfe", [ref: "mra-rebar3"]},
+  "basho_bench": {:git, "https://github.com/fire/basho_bench.git", "c92c71c09b17f5f2c983a31d2a6ec2db40de9bfe", [ref: "mra-rebar3"]},
   "bear": {:hex, :bear, "0.8.7", "16264309ae5d005d03718a5c82641fcc259c9e8f09adeb6fd79ca4271168656f", [:rebar3], [], "hexpm"},
   "benchfella": {:hex, :benchfella, "0.3.5", "b2122c234117b3f91ed7b43b6e915e19e1ab216971154acd0a80ce0e9b8c05f5", [], [], "hexpm"},
   "certifi": {:hex, :certifi, "2.0.0", "a0c0e475107135f76b8c1d5bc7efb33cd3815cb3cf3dea7aefdd174dabead064", [], [], "hexpm"},

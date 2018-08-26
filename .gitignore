@@ -10,3 +10,4 @@ bench/snapshots/
 /config/cert.pem
 /config/key.pem
 /config/cacerts.pem
+/.elixir_ls/

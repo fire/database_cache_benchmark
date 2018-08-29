@@ -23,5 +23,5 @@ iex -S mix
 ```
 
 ```bat
-"C:\Program Files\Microsoft\R Open\R-3.4.1\bin\x64\Rscript.exe" G:\database_cache_benchmark\deps\basho_bench\priv\summary.r -i G:\database_cache_benchmark\tests\20171024_075858
+"C:\Program Files\Microsoft\R Open\R-3.4.1\bin\x64\Rscript.exe" D:\projects\database_cache_benchmark\deps\basho_bench\priv\summary.r -i D:\projects\database_cache_benchmark\tests\
 ```

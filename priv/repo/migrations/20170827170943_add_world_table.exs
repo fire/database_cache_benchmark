@@ -2,7 +2,7 @@ defmodule Hello.Repo.Migrations.AddWorldTable do
   use Ecto.Migration
 
   def up do
-    create table(:world, prefix: "bench") do
+    create table(:world) do
           add :random_number, :integer, [null: false]
 
           timestamps()

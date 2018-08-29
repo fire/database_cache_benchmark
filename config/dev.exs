@@ -26,7 +26,7 @@ config :hello, Hello.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "root",
   password: "",
-  database: "bench",
+  database: "postgres",
   hostname: "127.0.0.1",
   pool_size: 20,
   port: 26257
